@@ -1,10 +1,60 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
-import { FlatView } from './FlatView/FlatView';
+import { StyleSheet, Text, View, Image, SafeAreaView, FlatList } from 'react-native';
+
 import { useState } from 'react';
+import SanPham from './SanPham';
 
 export default function App() {
- 
+  const product = [
+    {
+      urlImage: require("./assets/giacchuyen.png"),
+      name: "Cáp chuyển từ Cổng USB sang PS2...",
+    },
+    {
+      urlImage: require("./assets/daynguon.png"),
+      name: "Cáp chuyển từ Cổng USB sang PS2...",
+    },
+    {
+      urlImage: require("./assets/dauchuyendoipsps.png"),
+      name: "Cáp chuyển từ Cổng USB sang PS2...",
+    },
+    {
+      urlImage: require("./assets/dauchuyendoi.png"),
+      name: "Cáp chuyển từ Cổng USB sang PS2...",
+    },
+    {
+      urlImage: require("./assets/carbusbtops.png"),
+      name: "Cáp chuyển từ Cổng USB sang PS2...",
+    },
+    {
+      urlImage: require("./assets/daucam.png"),
+      name: "Cáp chuyển từ Cổng USB sang PS2...",
+    },
+    {
+      urlImage: require("./assets/giacchuyen.png"),
+      name: "Cáp chuyển từ Cổng USB sang PS2...",
+    },
+    {
+      urlImage: require("./assets/daynguon.png"),
+      name: "Cáp chuyển từ Cổng USB sang PS2...",
+    },
+    {
+      urlImage: require("./assets/dauchuyendoipsps.png"),
+      name: "Cáp chuyển từ Cổng USB sang PS2...",
+    },
+    {
+      urlImage: require("./assets/dauchuyendoi.png"),
+      name: "Cáp chuyển từ Cổng USB sang PS2...",
+    },
+    {
+      urlImage: require("./assets/carbusbtops.png"),
+      name: "Cáp chuyển từ Cổng USB sang PS2...",
+    },
+    {
+      urlImage: require("./assets/daucam.png"),
+      name: "Cáp chuyển từ Cổng USB sang PS2...",
+    },
+  ];
   return (
     <View style={styles.container}>
       <View style={{
@@ -18,7 +68,15 @@ export default function App() {
           <Image source={require('./assets/giohang.png')}></Image></View>
       </View>
 
-      <FlatView/>
+      <SafeAreaView style={{height: "90%", width:"100%"}}>
+        <FlatList
+          data={product}
+          keyExtractor={(item, index)=> index.toString()}
+          numColumns={2}
+          renderItem={({ item }) => (<SanPham product={item} />)}>
+
+        </FlatList>
+      </SafeAreaView>
       <View style={{
         height: '5%',
         padding: 10, width: '100%', backgroundColor: '#3f90ab', flexDirection: 'row', justifyContent: 'center'
@@ -42,5 +100,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: 30
   },
 });
