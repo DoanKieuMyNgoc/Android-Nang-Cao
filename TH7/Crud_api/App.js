@@ -29,8 +29,8 @@ export default function App() {
           keyExtractor={({ id }, index) => id}
           renderItem={({ item }) => (
             <View>
-              {/* <Text>{item.name},{item.linkImage}</Text> */}
-              <Image style={{width:}} source={{uri:'https://res.cloudinary.com/dqu4c4qol/image/upload/v1665619525/cld-sample-5.jpg'}}></Image>
+              <Text>{item.name},{item.linkImage}</Text>
+              <Image style={{width:70, height:50}} source={{uri:item.linkImage}}></Image>
             </View>
           )}
         />
