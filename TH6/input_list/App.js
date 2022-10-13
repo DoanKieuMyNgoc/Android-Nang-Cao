@@ -8,7 +8,6 @@ export default function App() {
   const Stack = createNativeStackNavigator()
   return (
     <View style={styles.container}>
-      <StatusBar style='auto' />
         <NavigationContainer>
           <Stack.Navigator initialRouteName="Input">
             <Stack.Screen name='InputScreeen' component={InputScreeen} />
