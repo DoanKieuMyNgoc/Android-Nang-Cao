@@ -25,11 +25,12 @@ export default function App() {
     <View style={styles.container}>
       {isLoading ? <ActivityIndicator /> : (
         <FlatList
+        numColumns="2"
           data={data}
           keyExtractor={({ id }, index) => id}
           renderItem={({ item }) => (
             <View>
-              <Text>{item.name},{item.linkImage}</Text>
+              <Text>{item.name}</Text>
               <Image style={{width:70, height:50}} source={{uri:item.linkImage}}></Image>
             </View>
           )}
