@@ -8,8 +8,8 @@ export default function BT2() {
   const fadeIn = () => {
     // Will change fadeAnim value to 1 in 5 seconds
     Animated.timing(fadeAnim, {
-      toValue: 300,
-      duration: 5000
+      toValue: 377,
+      duration: 2000
     }).start();
   };
   return (
@@ -35,7 +35,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
   },
 });
