@@ -8,7 +8,7 @@ export default function BT3() {
   const fadeIn = () => {
     Animated.timing(fadeAnim, {
       toValue: 377,
-      duration: 5000
+      duration: 2000
     }).start();
   };
   const fadeStop = () => {
