@@ -19,6 +19,10 @@ export default class Home extends Component {
             title='BT3'
             onPress={() => { navigation.navigate('BT3') }}
         ></Button>
+        <Button
+            title='BT4'
+            onPress={() => { navigation.navigate('BT4') }}
+        ></Button>
         
     </View>
     )

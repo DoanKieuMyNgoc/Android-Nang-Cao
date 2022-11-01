@@ -6,21 +6,15 @@ export default function BT3() {
 
 
   const fadeIn = () => {
-    // Will change fadeAnim value to 1 in 5 seconds
     Animated.timing(fadeAnim, {
       toValue: 377,
-      duration: 10000
+      duration: 5000
     }).start();
   };
   const fadeStop = () => {
-    // Will change fadeAnim value to 1 in 5 seconds
-    Animated.timing(fadeAnim, {
-      toValue: 377,
-      duration: 10000
-    }).start();
+    Animated.timing(fadeAnim).stop();
   };
   const fadeReset = () => {
-    // Will change fadeAnim value to 1 in 5 seconds
     Animated.timing(fadeAnim, {
       toValue: 0,
       duration: 0
@@ -45,7 +39,7 @@ export default function BT3() {
       </Animated.View>
       <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
         <Button title='Start' onPress={fadeIn} />
-        <Button title='Stop' />
+        <Button title='Stop' onPress={fadeStop}/>
         <Button title='Reset' onPress={fadeReset} />
       </View>
     </View>
