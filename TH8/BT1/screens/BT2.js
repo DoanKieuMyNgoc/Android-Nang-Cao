@@ -1,14 +1,14 @@
-import { View,  Animated, StyleSheet, Button } from 'react-native'
+import { View, Animated, StyleSheet, Button } from 'react-native'
 import React, { useEffect, useRef } from 'react'
-
+import { Dimensions } from 'react-native';
+var { width, height } = Dimensions.get('window')
 export default function BT2() {
   const fadeAnim = useRef(new Animated.Value(0)).current;
 
 
   const fadeIn = () => {
-    // Will change fadeAnim value to 1 in 5 seconds
     Animated.timing(fadeAnim, {
-      toValue: 377,
+      toValue: width -30,
       duration: 2000
     }).start();
   };

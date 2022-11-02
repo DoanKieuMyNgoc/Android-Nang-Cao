@@ -1,5 +1,7 @@
 import { View, Text, Button, StyleSheet, Animated } from 'react-native'
 import React, { useRef } from 'react'
+import { Dimensions } from 'react-native';
+var { width, height } = Dimensions.get('window')
 
 export default function BT3() {
   const fadeAnim = useRef(new Animated.Value(0)).current;
@@ -7,7 +9,7 @@ export default function BT3() {
 
   const fadeIn = () => {
     Animated.timing(fadeAnim, {
-      toValue: 377,
+      toValue: width - 30,
       duration: 2000
     }).start();
   };
@@ -16,8 +18,7 @@ export default function BT3() {
   };
   const fadeReset = () => {
     Animated.timing(fadeAnim, {
-      toValue: 0,
-      duration: 0
+      toValue: 0
     }).start();
   };
 
@@ -39,7 +40,7 @@ export default function BT3() {
       </Animated.View>
       <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
         <Button title='Start' onPress={fadeIn} />
-        <Button title='Stop' onPress={fadeStop}/>
+        <Button title='Stop' onPress={fadeStop} />
         <Button title='Reset' onPress={fadeReset} />
       </View>
     </View>

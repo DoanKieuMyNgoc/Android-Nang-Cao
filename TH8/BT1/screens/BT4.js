@@ -1,19 +1,32 @@
 import { View, Text, Animated, StyleSheet, Image } from 'react-native'
 import React, { useEffect, useRef } from 'react'
+import { Dimensions } from 'react-native';
+var { width, height } = Dimensions.get('window')
 
 export default function BT4() {
 
-  const fadeAnim = useRef(new Animated.Value(0)).current;
+  const apear = useRef(new Animated.Value(0)).current;
+  const move = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
     Animated.timing(
-      fadeAnim,
+      move,
       {
-        toValue: 330,
+        toValue: width-75,
         duration: 2000,
       }
     ).start();
-  }, [fadeAnim])
+  }, [move])
+
+  useEffect(() => {
+    Animated.timing(
+      apear,
+      {
+        toValue: 1,
+        duration: 4500,
+      }
+    ).start();
+  }, [apear])
 
 
   return (
@@ -23,7 +36,7 @@ export default function BT4() {
           styles.fadingContainer,
           {
 
-            opacity: fadeAnim
+            opacity: apear
           }
 
         ]}
@@ -35,7 +48,7 @@ export default function BT4() {
           styles.fadingContainer,
           {
 
-            marginLeft: fadeAnim
+            marginLeft: move
           }
 
         ]}>
