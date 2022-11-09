@@ -7,25 +7,25 @@ export default function BT2({ navigation }) {
     = useState({
       x: null,
       y: null,
-      marginLeft: new Animated.Value(Math.random()),
-      marginTop: new Animated.Value(Math.random())
+      marginLeft: new Animated.Value(0),
+      marginTop: new Animated.Value(0)
 
     });
 
 
   function onPress(evt) {
-    console.log('====================================');
-    var x = evt.nativeEvent.locationX;
-    console.log('====================================');
-    console.log(x);
-    console.log('====================================');
-    var y = evt.nativeEvent.locationY;
-    console.log('====================================');
+    // console.log('====================================');
+    // var x = evt.nativeEvent.locationX;
+    // console.log('====================================');
+    // console.log(x);
+    // console.log('====================================');
+    // var y = evt.nativeEvent.locationY;
+    // console.log('====================================');
     setLocation({
-      x: x,
-      y: y,
-      marginLeft: x,
-      marginTop: y
+      x: Math.random(),
+      y: Math.random(),
+      marginLeft: Math.random(),
+      marginTop: Math.random()
 
     })
   }
@@ -36,8 +36,6 @@ export default function BT2({ navigation }) {
       onStartShouldSetResponder={() => true}
       onResponderGrant={onPress}
       style={styles.container}>
-
-      <Text>Show something!</Text>
 
       <Animated.Image
         source={require('../assets/chuot.png')}
